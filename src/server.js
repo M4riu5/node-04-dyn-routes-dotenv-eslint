@@ -6,9 +6,18 @@ const cors = require('cors')
 const morgan = require('morgan')
 
 const app = express()
-app.use(cors())
+
+
+  //middleware
+app.use(morgan('dev'))
+
+
+  //routes
 app.get('/', (req, res) => {
     res.send('Hello World')
   })
 
-  app.listen(3000)
+
+
+  const port = 3000
+  app.listen(port, () => console.log(`server is runining`))
